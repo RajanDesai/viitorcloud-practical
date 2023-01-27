@@ -31,8 +31,8 @@ Route::get('/email/verify', function () {
 Route::get('/email/verify/{id}/{hash}', [AuthController::class, 'verifyEmail'])->name('verification.verify');
 
 // For tentans
-Route::get('/{account}/login', [AuthController::class, 'showLoginForm'])->name('tenants.login');
-Route::post('/{account}/login', [AuthController::class, 'login'])->name('tenants.postLogin');
+Route::get('tenants/{account}/login', [AuthController::class, 'showLoginForm'])->name('tenants.login');
+Route::post('tenants/{account}/login', [AuthController::class, 'login'])->name('tenants.postLogin');
 
 Route::group(['middleware' => ['auth:web']], function() {
     Route::get('/{account}/home', function () {

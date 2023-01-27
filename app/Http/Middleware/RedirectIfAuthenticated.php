@@ -28,7 +28,7 @@ class RedirectIfAuthenticated
                         return redirect()->route('admin.dashboard');
                         break;
                     default:
-                        return redirect(RouteServiceProvider::HOME);
+                        return redirect()->route('tenants.login');
                         break;
                 }
             }
